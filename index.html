@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Chat avec socket.io - Test</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+    	<div id="titlebar" class="titlebar">
+    		<H1>Chat.io</H1>
+    	</div>
+
+    	<div id="users">
+    		<h3>Utillisateurs connectés</h3>
+    	</div>
+    	<div id="messages">
+    		<div class="message" id="msgtemplate" style="display: none;">
+    			<img src="{{{user.avatar}}}">
+    			<div class="info">
+    				<strong>{{user.username}} ({{h}}:{{m}}) :</strong><br>{{message}}
+    			</div>
+    		</div>
+    	</div>
+
+    	<div id="login">
+    		<form action = "" id="loginform">
+    			<h1>Bienvenue</h1>
+    			<p>Entrez votre pseudo et votre adresse mail pour commencer.<br>Votre mail est utilisé afin de récupérer automatiquement votre avatar sur Gravatar.com</p>
+    			<input type="text" name="login" id="username" placeholder="Pseudo"/>
+    			<input type="mail" name="mail" id="mail" placeholder="Adresse E-mail"/>
+    			<input type="submit" value="Envoyer"/>
+    			<p id="loginerror"></p>
+    		</form>	
+    	</div>
+
+    	<form action="" id="form">
+    		<input type="text" id="message" class="text"/>
+    		<input type="submit" id="send" value="Envoyer" class="submit"/>
+    	</form>
+
+    	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    	<script src="http://localhost:1337/socket.io/socket.io.js"></script>
+  		<script src="js/mustache.js"></script>
+    	<script src="js/client.js"></script>
+    </body>
+</html>
